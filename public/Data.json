@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Emma Wilson",
+    "picture": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    "email": "emma.w@example.com",
+    "days_since_contact": 32,
+    "status": "overdue",
+    "tags": ["Family", "Close Friend"],
+    "bio": "Older sister. Currently working in Chicago as a graphic designer.",
+    "goal": 14,
+    "next_due_date": "2026-03-15"
+  },
+  {
+    "id": 2,
+    "name": "David Kim",
+    "picture": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+    "email": "dkim_dev@example.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["Work", "Tech"],
+    "bio": "Former colleague and great mentor. We usually talk about React and career growth.",
+    "goal": 30,
+    "next_due_date": "2026-05-08"
+  },
+  {
+    "id": 3,
+    "name": "Lisa Nakamura",
+    "picture": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
+    "email": "lisa.nak@travel.com",
+    "days_since_contact": 12,
+    "status": "almost-due",
+    "tags": ["College", "Travel"],
+    "bio": "Met during study abroad in Japan. She loves exploring hidden cafes.",
+    "goal": 14,
+    "next_due_date": "2026-04-15"
+  },
+  {
+    "id": 4,
+    "name": "James Wright",
+    "picture": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    "email": "j.wright@example.com",
+    "days_since_contact": 45,
+    "status": "overdue",
+    "tags": ["Hobby", "Gym"],
+    "bio": "Hiking buddy. We’ve climbed three peaks together so far.",
+    "goal": 30,
+    "next_due_date": "2026-03-01"
+  },
+  {
+    "id": 5,
+    "name": "Sarah Chen",
+    "picture": "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+    "email": "sarah.c@design.com",
+    "days_since_contact": 2,
+    "status": "on-track",
+    "tags": ["Art", "Neighbor"],
+    "bio": "Local artist. She helps me with interior design ideas.",
+    "goal": 7,
+    "next_due_date": "2026-04-18"
+  },
+  {
+    "id": 6,
+    "name": "Marcus Johnson",
+    "picture": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
+    "email": "marcus.j@business.com",
+    "days_since_contact": 20,
+    "status": "almost-due",
+    "tags": ["Mentorship"],
+    "bio": "Career coach. We meet once a month to discuss long-term goals.",
+    "goal": 25,
+    "next_due_date": "2026-04-18"
+  }
+]
