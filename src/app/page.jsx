@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import { IoIosAdd } from "react-icons/io";
 const friends = [
  {
     "id": 1,
@@ -100,6 +101,14 @@ const friends = [
 ]
 const HomePage = () => {
     // console.log(friends)
+    const getStatusStyles = (status) => {
+    switch (status) {
+      case 'overdue': return 'bg-[#EF4444] text-[#FFFFFF]';
+      case 'almost-due': return 'bg-[#EFAD44] text-[#FFFFFF]';
+      case 'on-track': return 'bg-[#244D3F] text-[#FFFFFF]';
+      default: return 'bg-gray-100 text-gray-600';
+    }
+  };
     return (
           <div className="min-h-screen bg-gray-100 p-6 text-center pb-20">
       
@@ -155,7 +164,7 @@ const HomePage = () => {
             </span>
 
             <div className="mt-2">
-              <span className="text-xs px-2 py-1 bg-red-100 text-red-500 rounded-full">
+              <span className={`text-xs px-2 py-1 rounded-full ${getStatusStyles(friend.status)}`}>
                 {friend.status}
               </span>
             </div>
