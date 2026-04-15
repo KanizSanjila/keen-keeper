@@ -28,11 +28,25 @@ const Navbar = () => {
     <Image src={NavImage} alt='data'></Image>
   </div>
   <div className="flex-none">
-    <ul className="menu menu-horizontal px-1">
-     <Link href={"/"}><li><a><RiHome2Line />Home</a></li></Link>
-      <Link href={"/timeline"}><li><a><RiTimeLine />Timeline</a></li></Link>
-      <Link href={"/stats"}><li><a><ImStatsDots />Stats</a></li></Link>
-    </ul>
+   <ul className="menu menu-horizontal px-1">
+  <li>
+    <Link href="/" className="flex items-center gap-1">
+      <RiHome2Line /> Home
+    </Link>
+  </li>
+
+  <li>
+    <Link href="/timeline" className="flex items-center gap-1">
+      <RiTimeLine /> Timeline
+    </Link>
+  </li>
+
+  <li>
+    <Link href="/stats" className="flex items-center gap-1">
+      <ImStatsDots /> Stats
+    </Link>
+  </li>
+</ul>
   </div>
 </div>
     );
