@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import React from 'react';
 const friends = [
-  {
+ {
     "id": 1,
     "name": "Emma Wilson",
-    "picture": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    "picture": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91",
     "email": "emma.w@example.com",
     "days_since_contact": 32,
     "status": "overdue",
@@ -16,7 +16,7 @@ const friends = [
   {
     "id": 2,
     "name": "David Kim",
-    "picture": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+    "picture": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e",
     "email": "dkim_dev@example.com",
     "days_since_contact": 5,
     "status": "on-track",
@@ -28,7 +28,7 @@ const friends = [
   {
     "id": 3,
     "name": "Lisa Nakamura",
-    "picture": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
+    "picture": "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
     "email": "lisa.nak@travel.com",
     "days_since_contact": 12,
     "status": "almost-due",
@@ -40,7 +40,7 @@ const friends = [
   {
     "id": 4,
     "name": "James Wright",
-    "picture": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    "picture": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
     "email": "j.wright@example.com",
     "days_since_contact": 45,
     "status": "overdue",
@@ -52,7 +52,7 @@ const friends = [
   {
     "id": 5,
     "name": "Sarah Chen",
-    "picture": "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+    "picture": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
     "email": "sarah.c@design.com",
     "days_since_contact": 2,
     "status": "on-track",
@@ -64,7 +64,7 @@ const friends = [
   {
     "id": 6,
     "name": "Marcus Johnson",
-    "picture": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
+    "picture": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce",
     "email": "marcus.j@business.com",
     "days_since_contact": 20,
     "status": "almost-due",
@@ -76,7 +76,7 @@ const friends = [
   {
     "id": 7,
     "name": "Olivia Brown",
-    "picture": "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+    "picture": "https://images.unsplash.com/photo-1521119989659-a83eee488004",
     "email": "olivia.b@example.com",
     "days_since_contact": 28,
     "status": "almost-due",
@@ -88,7 +88,7 @@ const friends = [
   {
     "id": 8,
     "name": "Daniel Garcia",
-    "picture": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e",
+    "picture": "https://images.unsplash.com/photo-1580489944761-15a19d654956",
     "email": "daniel.g@example.com",
     "days_since_contact": 60,
     "status": "overdue",
@@ -111,7 +111,7 @@ const HomePage = () => {
         Your personal list of meaningful connections. Grow, tend, and nurture the relationships that matter most.
       </p>
 
-      <button className="bg-green-600 text-white px-4 py-2 rounded mb-6">
+      <button className="bg-[#244D3F] text-white px-4 py-2 rounded mb-6">
         + Add a Friend
       </button>
 
