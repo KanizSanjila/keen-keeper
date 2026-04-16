@@ -6,7 +6,7 @@ export const metadata = {
 const TimeLinePage = () => {
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold mb-4">Timeline???</h1>
+      <h1 className="text-2xl font-bold mb-4">Timeline</h1>
       <div className="mb-4">
         <select className="select select-bordered w-60">
           <option disabled selected>

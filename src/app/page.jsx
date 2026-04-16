@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 const friends = [
  {
     "id": 1,
@@ -147,7 +148,7 @@ const HomePage = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {friends.map((friend) => (
-          <div
+          <Link href={`/friend/friendId${friend.id}`}
             key={friend.id}
             className="bg-white p-4 rounded shadow text-center"
           >
@@ -157,16 +158,19 @@ const HomePage = () => {
             <h3 className="font-semibold">{friend.name}</h3>
             <p className="text-gray-400 text-sm mb-2">{friend.days_since_contact}d ago</p>
 
-            <span className="text-xs px-2 py-1 bg-green-100 text-green-600 rounded-full">
-              {friend.tags[0]}
-            </span>
+            {friend.tags.map((tag, idx) => (
+                    <span key={idx} className="text-xs px-2 py-1 bg-green-100 text-green-600 rounded-full ml-2">
+                      {tag}
+                    </span>
+                  ))}
 
             <div className="mt-2">
+               
               <span className={`text-xs px-2 py-1 rounded-full ${getStatusStyles(friend.status)}`}>
                 {friend.status}
               </span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
