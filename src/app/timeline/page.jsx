@@ -8,14 +8,14 @@ const TimeLinePage = () => {
     <div className="p-6 bg-gray-100 min-h-screen">
       <h1 className="text-2xl font-bold mb-4">Timeline</h1>
       <div className="mb-4">
-        <select className="select select-bordered w-60">
+        {/* <select className="select select-bordered w-60">
           <option disabled selected>
             Filter timeline
           </option>
           <option>All</option>
           <option>Meetups</option>
           <option>Events</option>
-        </select>
+        </select> */}
       </div>
 
       <div className="bg-white rounded-lg shadow-sm p-4 flex items-center gap-4">

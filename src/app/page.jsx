@@ -1,105 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-const friends = [
- {
-    "id": 1,
-    "name": "Emma Wilson",
-    "picture": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91",
-    "email": "emma.w@example.com",
-    "days_since_contact": 32,
-    "status": "overdue",
-    "tags": ["Family", "Close Friend"],
-    "bio": "Older sister. Currently working in Chicago as a graphic designer.",
-    "goal": 14,
-    "next_due_date": "2026-03-15"
-  },
-  {
-    "id": 2,
-    "name": "David Kim",
-    "picture": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e",
-    "email": "dkim_dev@example.com",
-    "days_since_contact": 5,
-    "status": "on-track",
-    "tags": ["Work", "Tech"],
-    "bio": "Former colleague and great mentor.",
-    "goal": 30,
-    "next_due_date": "2026-05-08"
-  },
-  {
-    "id": 3,
-    "name": "Lisa Nakamura",
-    "picture": "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
-    "email": "lisa.nak@travel.com",
-    "days_since_contact": 12,
-    "status": "almost-due",
-    "tags": ["College", "Travel"],
-    "bio": "Met during study abroad in Japan.",
-    "goal": 14,
-    "next_due_date": "2026-04-15"
-  },
-  {
-    "id": 4,
-    "name": "James Wright",
-    "picture": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
-    "email": "j.wright@example.com",
-    "days_since_contact": 45,
-    "status": "overdue",
-    "tags": ["Hobby", "Gym"],
-    "bio": "Hiking buddy.",
-    "goal": 30,
-    "next_due_date": "2026-03-01"
-  },
-  {
-    "id": 5,
-    "name": "Sarah Chen",
-    "picture": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
-    "email": "sarah.c@design.com",
-    "days_since_contact": 2,
-    "status": "on-track",
-    "tags": ["Art", "Neighbor"],
-    "bio": "Local artist.",
-    "goal": 7,
-    "next_due_date": "2026-04-18"
-  },
-  {
-    "id": 6,
-    "name": "Marcus Johnson",
-    "picture": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce",
-    "email": "marcus.j@business.com",
-    "days_since_contact": 20,
-    "status": "almost-due",
-    "tags": ["Mentorship"],
-    "bio": "Career coach.",
-    "goal": 25,
-    "next_due_date": "2026-04-18"
-  },
-  {
-    "id": 7,
-    "name": "Olivia Brown",
-    "picture": "https://images.unsplash.com/photo-1521119989659-a83eee488004",
-    "email": "olivia.b@example.com",
-    "days_since_contact": 28,
-    "status": "almost-due",
-    "tags": ["Friend"],
-    "bio": "Childhood friend.",
-    "goal": 30,
-    "next_due_date": "2026-04-20"
-  },
-  {
-    "id": 8,
-    "name": "Daniel Garcia",
-    "picture": "https://images.unsplash.com/photo-1580489944761-15a19d654956",
-    "email": "daniel.g@example.com",
-    "days_since_contact": 60,
-    "status": "overdue",
-    "tags": ["Business"],
-    "bio": "Business partner.",
-    "goal": 30,
-    "next_due_date": "2026-02-28"
-  }
-]
-const HomePage = () => {
+import { IoAdd } from "react-icons/io5";
+
+const HomePage =async () => {
     // console.log(friends)
+     const res =await fetch("http://localhost:3000/data.json")
+    const friends = await res.json();
+    console.log(friends)
     const getStatusStyles = (status) => {
     switch (status) {
       case 'overdue': return 'bg-[#EF4444] text-[#FFFFFF]';
@@ -119,9 +26,9 @@ const HomePage = () => {
         Your personal list of meaningful connections. Grow, tend, and nurture the relationships that matter most.
       </p>
 
-      <button className="bg-[#244D3F] text-white px-4 py-2 rounded mb-6">
-        + Add a Friend
-      </button>
+      <div className="bg-[#244D3F] text-white px-4 py-2 rounded mb-6 flex items-center justify-center w-2/12 mx-auto text-center gap-2">
+        <IoAdd /><p> Add a Friend</p>
+      </div>
 
       
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -148,7 +55,7 @@ const HomePage = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {friends.map((friend) => (
-          <Link href={`/friend/friendId${friend.id}`}
+          <Link href={`/friend/${friend.id}`}
             key={friend.id}
             className="bg-white p-4 rounded shadow text-center"
           >
