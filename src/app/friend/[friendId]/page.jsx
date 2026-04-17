@@ -7,7 +7,9 @@ import { PiVideoCamera } from "react-icons/pi";
 import Button from '@/components/Button';
 
 const getData = async () => {
-    const res = await fetch(`http://localhost:3000/data.json`)
+    const res = await fetch(`https://keen-keeper-lac.vercel.app/data.json`,{
+        cache:"no-store"
+    })
     return res.json()
 }
 const AppDetailsPage = async ({ params }) => {
@@ -18,16 +20,25 @@ const AppDetailsPage = async ({ params }) => {
 
     const friend = friends.find(friend => friend.id === parseInt(friendId))
     //   console.log(friend)
-    const { name, picture, status, tags, email, goal, next_due_date, days_since_contact, bio } = friend
+    const {name, picture, status, tags, email, goal, next_due_date, days_since_contact, bio } = friend
+
+       const getStatusStyles = (status) => {
+    switch (status) {
+      case 'overdue': return 'bg-[#EF4444] text-[#FFFFFF]';
+      case 'almost-due': return 'bg-[#EFAD44] text-[#FFFFFF]';
+      case 'on-track': return 'bg-[#244D3F] text-[#FFFFFF]';
+      default: return 'bg-gray-100 text-gray-600';
+    }
+  };
     return (
         <div className='max-w-6xl mx-auto flex gap-4 mt-10'>
             <div className="lg:col-span-4 space-y-6">
                 <div className="bg-white border border-gray-100 p-8 rounded-4xl shadow-sm text-center">
-                    <Image className='w-24 h-24 rounded-full mx-auto mb-4 object-cover' width={100} height={100} src={picture} alt={name}></Image>
+                    <Image className='w-24 h-24 rounded-full mx-auto mb-4 object-cover' width={100} height={100} src={picture} alt={'imahe'}></Image>
                     <h2 className="text-2xl font-black text-gray-900">{name}</h2>
 
                     <div className="my-3 space-y-4">
-                        <span className="bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-bold tracking-wider">{status}</span>
+                        <span className={`text-xs px-2 py-1 rounded-full ${getStatusStyles(friend.status)}`}>{status}</span>
                         <br />
                         <span className="px-3 text-emerald-700 text-[10px] py-1 rounded-full font-bold tracking-wider">{tags[0] ? <button className="bg-green-300 px-4 py-1 rounded-2xl mt-4 mr-2">{tags[0]}</button> : ""}
                             {tags[1] ? <button className="bg-green-300 px-4 py-1 rounded-2xl mt-4">{tags[1]}</button> : ""}</span>
@@ -76,7 +87,7 @@ const AppDetailsPage = async ({ params }) => {
                 <div className="bg-white border border-gray-100 p-8 rounded-3xl">
                     <h3 className="text-sm font-black text-[#244D3F] tracking-widest mb-6">Quick Check-In</h3>
                     <div>
-                       <Button></Button>
+                       <Button friend={friend}></Button>
                     </div>
                 </div>
 

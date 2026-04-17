@@ -1,11 +1,21 @@
-import React from 'react';
+"use client"
 import { MdOutlineHistory, MdOutlinePhoneInTalk, MdOutlineTextsms } from "react-icons/md";
 import { PiVideoCamera } from "react-icons/pi";
+import toast from 'react-hot-toast';
+import { useState } from "react";
 
-const Button = () => {
+const Button = ({friend}) => {
+
+    const [count,setCount] = useState(0);
+    const handleButton = () => {
+        // const load = count + 1;
+        // setCount(load)
+        // console.log(load)
+        toast.success(`Call with ${friend.name}`);
+    }
     return (
-        <div className="grid grid-cols-3 gap-4">
-            <button className="border border-gray-50 py-6 rounded-xl hover:bg-gray-50 transition flex flex-col items-center gap-2">
+        <div onClick={()=>handleButton(count)} className="grid grid-cols-3 gap-4">
+            <button  className="border border-gray-50 py-6 rounded-xl hover:bg-gray-50 transition flex flex-col items-center gap-2">
                                        <span className="text-xl"><MdOutlinePhoneInTalk /></span>
                                        <span className="font-bold text-gray-600 text-sm">Call</span>
                                    </button>

@@ -4,7 +4,9 @@ import { IoAdd } from "react-icons/io5";
 
 const HomePage =async () => {
     // console.log(friends)
-     const res =await fetch("http://localhost:3000/data.json")
+     const res =await fetch("https://keen-keeper-lac.vercel.app/data.json",{
+        cache:"no-store"
+    })
     const friends = await res.json();
     console.log(friends)
     const getStatusStyles = (status) => {
